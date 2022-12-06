@@ -9,8 +9,11 @@ body {
     height: 977px;
     background-image: url(./plane.svg);
     position: relative;
-    margin: 0;
+    margin: auto;
     overflow: visible;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .strikes {

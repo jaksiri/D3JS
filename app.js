@@ -126,7 +126,8 @@ document
 
       //Change Background
       bg.style("background-color", "#3a51648d").transition().duration("250");
-
+      // bg1.style("background-image", url("https://drive.google.com/file/d/1vdfUGz1uqkVSAsijV7KjXUAHyxQoPTIS/view?usp=sharing")).transition().duration("250");
+      // bg1 = d3.select("body").style("background-image", url("https://drive.google.com/file/d/1vdfUGz1uqkVSAsijV7KjXUAHyxQoPTIS/view?usp=sharing"));
       //Change Tooltip
       day = false;
     }
@@ -135,6 +136,7 @@ document
 const container = d3.select("svg").classed("container", true);
 
 const bg = d3.select("body").append("rect").attr("class", "background-fill");
+// const bg1;
 
 const points = container
   .selectAll("g")
