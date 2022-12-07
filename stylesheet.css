@@ -17,10 +17,20 @@ body {
 }
 
 #myImg img {
-  width: 30%;
+  height: 250px;
 }
 .box {
   display: flex;
+}
+
+a {
+  padding: 10px;
+}
+
+.col-sm {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
 }
 
 .strikes {
@@ -130,4 +140,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
+    background-size: 100% auto;
   }
+
+  

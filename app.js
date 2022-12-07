@@ -81,7 +81,7 @@ const VARIABLES = {
 };
 
 var day = true;
-let element = document.getElementById('myImg');
+let element = document.getElementById("myImg");
 
 //Day-Night Toggle
 document
@@ -103,16 +103,16 @@ document
         .attr("r", ({ damage }) => `${damage.day / VARIABLES.scalingFactor}`);
 
       // Birds
-      document.getElementById('myImg').innerHTML = '';
-      for(i = 0; i < 3; i++){
-        let a = document.createElement('a');
-        a.href = 'index.html';
-        
-        let img = document.createElement('img');
+      document.getElementById("myImg").innerHTML = "";
+      for (i = 0; i < 3; i++) {
+        let a = document.createElement("a");
+        a.href = "index.html";
+
+        let img = document.createElement("img");
         img.src = day_images[i];
         a.appendChild(img);
-    
-        document.getElementById('myImg').appendChild(a);
+
+        document.getElementById("myImg").appendChild(a);
       }
 
       //Change Background
@@ -144,18 +144,18 @@ document
         .transition()
         .duration("250")
         .attr("r", ({ damage }) => `${damage.night / VARIABLES.scalingFactor}`);
-      
+
       // Birds
-      document.getElementById('myImg').innerHTML = '';
-      for(i = 0; i < 3; i++){
-        let a = document.createElement('a');
-        a.href = 'index.html';
-        
-        let img = document.createElement('img');
+      document.getElementById("myImg").innerHTML = "";
+      for (i = 0; i < 3; i++) {
+        let a = document.createElement("a");
+        a.href = "index.html";
+
+        let img = document.createElement("img");
         img.src = night_images[i];
         a.appendChild(img);
-    
-        document.getElementById('myImg').appendChild(a);
+
+        document.getElementById("myImg").appendChild(a);
       }
 
       //Change Background
@@ -175,11 +175,11 @@ document
 const container = d3.select("svg").classed("container", true);
 
 const bg = d3.select("body").append("rect").attr("class", "background-fill");
-const bgImg = d3
+let bgImg = d3
   .select("body")
   .append("rect")
   .attr("class", "bg-img")
-  .style("background-image", "url(./day.png)");
+  .style("background-image", "url(images/Background/day.png)");
 
 const points = container
   .selectAll("g")
@@ -254,7 +254,13 @@ points.on("mouseout", function (d, i) {
   d3.select(".tooltip").transition().duration("120").style("opacity", 0);
 });
 
-let day_images = ["images/day/Gull_day.svg", "images/day/MorningDove_day.svg", "images/day/Sparrow_day.svg"];
-let night_images = ["images/night/Gull_night.svg", "images/night/CanadaGoose_night.svg", "images/night/KillDeer_night.svg"]
-
-
+let day_images = [
+  "images/day/Gull_day.svg",
+  "images/day/MorningDove_day.svg",
+  "images/day/Sparrow_day.svg",
+];
+let night_images = [
+  "images/night/Gull_night.svg",
+  "images/night/CanadaGoose_night.svg",
+  "images/night/KillDeer_night.svg",
+];
