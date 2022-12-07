@@ -1,5 +1,4 @@
 body {
-    padding: 100px;
     margin: 0;
     overflow: visible;
 }
@@ -14,6 +13,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     display: block;
+    margin-top: 100px;
 }
 
 #myImg img {
