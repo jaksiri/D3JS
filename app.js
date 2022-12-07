@@ -103,6 +103,13 @@ document
 
       //Change Background
       bg.style("background-color", "#bde1ff8d").transition().duration("250");
+      bgImg = d3
+        .select("body")
+        .append("rect")
+        .attr("class", "bg-img")
+        .transition()
+        .duration("250")
+        .style("background-image", "url(./day.png)");
 
       //Change Tooltip
       day = true;
@@ -126,8 +133,13 @@ document
 
       //Change Background
       bg.style("background-color", "#3a51648d").transition().duration("250");
-      // bg1.style("background-image", url("https://drive.google.com/file/d/1vdfUGz1uqkVSAsijV7KjXUAHyxQoPTIS/view?usp=sharing")).transition().duration("250");
-      // bg1 = d3.select("body").style("background-image", url("https://drive.google.com/file/d/1vdfUGz1uqkVSAsijV7KjXUAHyxQoPTIS/view?usp=sharing"));
+      bgImg = d3
+        .select("body")
+        .append("rect")
+        .attr("class", "bg-img")
+        .transition()
+        .duration("250")
+        .style("background-image", "url(./night.png)");
       //Change Tooltip
       day = false;
     }
@@ -136,7 +148,11 @@ document
 const container = d3.select("svg").classed("container", true);
 
 const bg = d3.select("body").append("rect").attr("class", "background-fill");
-// const bg1;
+const bgImg = d3
+  .select("body")
+  .append("rect")
+  .attr("class", "bg-img")
+  .style("background-image", "url(./day.png)");
 
 const points = container
   .selectAll("g")
@@ -152,7 +168,7 @@ var div = d3
   .style("opacity", 0);
 
 //Strikes
-points
+const strikeCircle = points
   .append("g")
   .classed("strikes-container", true)
   .attr(
@@ -165,7 +181,7 @@ points
   .attr("r", ({ strikes }) => `${strikes.day / VARIABLES.scalingFactor}`);
 
 //Damages
-points
+const dmgCircle = points
   .append("g")
   .classed("damage-container", true)
   .attr(

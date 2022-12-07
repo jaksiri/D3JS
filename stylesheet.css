@@ -116,3 +116,11 @@ body {
     background-color: #bde1ff8d;
     
   }
+  .bg-img {
+    position: absolute;
+    z-index: -9998;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
