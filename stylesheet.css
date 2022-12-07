@@ -18,6 +18,7 @@ body {
 
 #myImg img {
   height: 250px;
+  max-width: 230px;
 }
 .box {
   display: flex;
