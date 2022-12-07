@@ -16,6 +16,13 @@ body {
     display: block;
 }
 
+#myImg img {
+  width: 30%;
+}
+.box {
+  display: flex;
+}
+
 .strikes {
     fill: rgba(255, 166, 0, 0.40);
 }

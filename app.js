@@ -81,6 +81,7 @@ const VARIABLES = {
 };
 
 var day = true;
+let element = document.getElementById('myImg');
 
 //Day-Night Toggle
 document
@@ -101,6 +102,19 @@ document
         .duration("250")
         .attr("r", ({ damage }) => `${damage.day / VARIABLES.scalingFactor}`);
 
+      // Birds
+      document.getElementById('myImg').innerHTML = '';
+      for(i = 0; i < 3; i++){
+        let a = document.createElement('a');
+        a.href = 'index.html';
+        
+        let img = document.createElement('img');
+        img.src = day_images[i];
+        a.appendChild(img);
+    
+        document.getElementById('myImg').appendChild(a);
+      }
+
       //Change Background
       bg.style("background-color", "#bde1ff8d").transition().duration("250");
       bgImg = d3
@@ -109,7 +123,7 @@ document
         .attr("class", "bg-img")
         .transition()
         .duration("250")
-        .style("background-image", "url(./day.png)");
+        .style("background-image", "url(images/Background/day.png)");
 
       //Change Tooltip
       day = true;
@@ -130,6 +144,19 @@ document
         .transition()
         .duration("250")
         .attr("r", ({ damage }) => `${damage.night / VARIABLES.scalingFactor}`);
+      
+      // Birds
+      document.getElementById('myImg').innerHTML = '';
+      for(i = 0; i < 3; i++){
+        let a = document.createElement('a');
+        a.href = 'index.html';
+        
+        let img = document.createElement('img');
+        img.src = night_images[i];
+        a.appendChild(img);
+    
+        document.getElementById('myImg').appendChild(a);
+      }
 
       //Change Background
       bg.style("background-color", "#3a51648d").transition().duration("250");
@@ -139,7 +166,7 @@ document
         .attr("class", "bg-img")
         .transition()
         .duration("250")
-        .style("background-image", "url(./night.png)");
+        .style("background-image", "url(images/Background/night.png)");
       //Change Tooltip
       day = false;
     }
@@ -226,3 +253,8 @@ points.on("mouseover", function (d, i) {
 points.on("mouseout", function (d, i) {
   d3.select(".tooltip").transition().duration("120").style("opacity", 0);
 });
+
+let day_images = ["images/day/Gull_day.svg", "images/day/MorningDove_day.svg", "images/day/Sparrow_day.svg"];
+let night_images = ["images/night/Gull_night.svg", "images/night/CanadaGoose_night.svg", "images/night/KillDeer_night.svg"]
+
+
