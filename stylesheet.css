@@ -143,4 +143,14 @@ a {
     background-size: 100% auto;
   }
 
+  .graph {
+    width: 400px;
+    height: 200px;
+    background-image: url(./images/flightstages.png);
+    background-size: contain;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+
   
